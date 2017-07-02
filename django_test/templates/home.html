@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+
+    <script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
+    <!-- (Optional) Latest compiled and minified JavaScript translation files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/i18n/defaults-*.min.js"></script>
+
+    <link type="text/css"  href="{% static "css/round-about.css" %}" rel="stylesheet">
+
+    <!--<link href="/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="/javascripts/jquery-1.12.1.min.js"></script>
+    <script src="/javascripts/bootstrap.min.js"></script>-->
+    <script type="text/javascript" src="https://maps.google.com/maps/api/js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+       
+      });
+      function setmapcenter(addr)
+      {
+            var geocoder = new google.maps.Geocoder();
+            geocoder.geocode({ 'address': addr
+                    }, function (results, status) {
+                        if (status == google.maps.GeocoderStatus.OK) {
+                       startlat = results[0].geometry.location.lat();
+                       startlong = results[0].geometry.location.lng();
+                       map.setCenter({ lat : startlat, lng : startlong});
+                 
+    
+                    }
+            
+            });
+       }
+
+</script>
+</head>
+<body>
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Pos System</a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+    </div>
+</nav>
+
+<div class="container">
+
+        <!-- Introduction Row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Coffee Sir,
+                    <small>咖啡時光 for happy and health!</small>
+                </h1>
+            </div>
+        </div>
+
+        <!-- Team Members Row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header">常用功能</h2>
+            </div>
+            <div class="col-lg-4 col-sm-6 text-center">
+               <img class="img-circle img-responsive img-center" src="{% static "css/images/account.png" %}" alt="">
+                <h3>結帳</h3>
+            </div>
+            <div class="col-lg-4 col-sm-6 text-center">
+                 <a href="http://127.0.0.1:8000/admin/customer/customermoneycard/">
+                    <img class="img-circle img-responsive img-center" src="{% static "css/images/addmoney.png" %}" alt="">
+                 </a>
+                <h3>儲值</h3>
+            </div>
+            <div class="col-lg-4 col-sm-6 text-center">
+                <img class="img-circle img-responsive img-center" src="{% static "css/images/query.jpg" %}" alt="">
+                <h3>查詢</h3>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; coffee sir pos system 2017</p>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+        </footer>
+
+    </div>
+
+
+</body>
+</html>
